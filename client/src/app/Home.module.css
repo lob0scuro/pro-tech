@@ -27,7 +27,7 @@ label.chiggetyCheck {
 }
 
 .ball {
-  height: 20px;
+  height: 18px;
   width: 32px;
   border-radius: 24px;
   background-color: var(--green);
