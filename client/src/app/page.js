@@ -10,7 +10,7 @@ import clsx from "clsx";
 const Home = () => {
   const router = useRouter();
   const { appProjects } = appContext();
-  const [viewActive, setViewActive] = useState(false);
+  const [viewActive, setViewActive] = useState(true);
   const activeJobs = appProjects.filter((p) => p.is_active === true);
   const completedJobs = appProjects.filter((p) => p.is_active === false);
   const jobView = viewActive ? activeJobs : completedJobs;
