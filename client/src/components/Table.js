@@ -2,11 +2,9 @@ import styles from "./styles/Table.module.css";
 import React from "react";
 
 const Table = ({ data }) => {
-  const jobTotal = parseFloat(
-    data
-      .reduce((sum, task) => sum + (parseFloat(task.total_amount) || 0), 0)
-      .toFixed(2)
-  );
+  const jobTotal = data
+    .reduce((sum, task) => sum + Number(task.total_amount) || 0, 0)
+    .toFixed(2);
 
   if (data.length <= 0) {
     return (

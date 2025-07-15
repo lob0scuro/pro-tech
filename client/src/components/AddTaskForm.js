@@ -74,7 +74,7 @@ const AddTaskForm = ({ project_id }) => {
           <label>Unit Cost</label>
           <input
             type="number"
-            step="any"
+            step="0.01"
             name="unit_cost"
             id="unit_cost"
             value={formData.unit_cost}

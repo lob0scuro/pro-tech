@@ -12,13 +12,7 @@ const Project = () => {
   const { id } = useParams();
   const { user, appProjects, projectTasks } = useAppContext();
   const project = appProjects.find((p) => p.id === Number(id));
-  const [tasks, setTasks] = useState([]);
-  useEffect(() => {
-    if (project) {
-      const getTasks = projectTasks.filter((t) => t.project_id === project.id);
-      setTasks(getTasks);
-    }
-  }, [project]);
+  const tasks = projectTasks.filter((t) => t.project_id === project.id);
 
   return (
     <>
