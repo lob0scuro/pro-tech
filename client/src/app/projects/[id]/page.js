@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Table from "@/components/Table";
 import Button from "@/components/Button";
-import { appContext } from "@/context/AppContext";
+import { useAppContext } from "@/context/AppContext";
 import AddTaskForm from "@/components/AddTaskForm";
 
 const Project = () => {
   const { id } = useParams();
-  const { user, appProjects, projectTasks } = appContext();
+  const { user, appProjects, projectTasks } = useAppContext();
   const project = appProjects.find((p) => p.id === Number(id));
   const [tasks, setTasks] = useState([]);
   useEffect(() => {

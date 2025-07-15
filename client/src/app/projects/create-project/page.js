@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import styles from "./CreateProject.module.css";
 import React, { useState } from "react";
-import { appContext } from "@/context/AppContext";
+import { useAppContext } from "@/context/AppContext";
 import { ProjectTable } from "@/lib/db";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 const CreateProject = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const { user, setAppProjects } = appContext();
+  const { user, setAppProjects } = useAppContext();
   const router = useRouter();
 
   const handleSubmit = (e) => {

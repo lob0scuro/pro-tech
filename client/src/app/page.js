@@ -4,12 +4,12 @@ import styles from "./Home.module.css";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { appContext } from "@/context/AppContext";
+import { useAppContext } from "@/context/AppContext";
 import clsx from "clsx";
 
 const Home = () => {
   const router = useRouter();
-  const { appProjects } = appContext();
+  const { appProjects } = useAppContext();
   const [viewActive, setViewActive] = useState(true);
   const activeJobs = appProjects.filter((p) => p.is_active === true);
   const completedJobs = appProjects.filter((p) => p.is_active === false);

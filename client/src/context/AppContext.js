@@ -33,4 +33,4 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-export const appContext = () => useContext(AppContext);
+export const useAppContext = () => useContext(AppContext);

@@ -1,11 +1,11 @@
-import { appContext } from "@/context/AppContext";
+import { useAppContext } from "@/context/AppContext";
 import styles from "./styles/AddTaskForm.module.css";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Button from "./Button";
 
 const AddTaskForm = ({ project_id }) => {
-  const { user, setProjectTasks } = appContext();
+  const { user, setProjectTasks } = useAppContext();
   const [formData, setFormData] = useState({
     description: "",
     quantity: 0,
