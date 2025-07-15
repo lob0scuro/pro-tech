@@ -1,0 +1,24 @@
+.btn {
+  background-color: var(--lime);
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  font-size: 18px;
+}
+.btn:hover {
+  background-color: var(--green);
+  color: var(--lime);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  padding: 1rem 0;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.secondaryBtn:hover {
+  background-color: var(--green);
+  color: var(--lime);
+  border-color: transparent;
+}

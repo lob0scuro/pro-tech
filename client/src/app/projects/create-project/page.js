@@ -1,0 +1,65 @@
+"use client";
+
+import Button from "@/components/Button";
+import styles from "./CreateProject.module.css";
+import React, { useState } from "react";
+import { appContext } from "@/context/AppContext";
+import { ProjectTable } from "@/lib/db";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+const CreateProject = () => {
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const { user, setAppProjects } = appContext();
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      name: name,
+      address: address,
+      user_id: user.id,
+      id: Math.floor(Math.random() * (100 - 11 + 1)) + 11,
+      total_project_value: 0,
+      total_billed_to_date_customer: 0,
+      total_billed_to_date_subs: 0,
+      is_active: true,
+    };
+
+    setAppProjects((prev) => [...prev, formData]);
+    toast.success("New project added!");
+    router.push("/");
+  };
+
+  return (
+    <>
+      <h1 className={styles.newProjectHeader}>New Project</h1>
+      <form className={styles.createProjectForm} onSubmit={handleSubmit}>
+        <div>
+          <label>Project Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Address</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
+        <Button title={"Submit"} type="submit" />
+      </form>
+    </>
+  );
+};
+
+export default CreateProject;

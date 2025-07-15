@@ -1,0 +1,73 @@
+.noTaskHeader {
+  margin-bottom: auto;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: var(--lime);
+  text-align: center;
+}
+
+.sovTable {
+  width: 90%;
+  margin-bottom: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.sovTable thead {
+  width: 100%;
+}
+.sovTable thead tr {
+  padding-inline: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--green);
+}
+.sovTable thead tr th {
+  text-align: end;
+  font-size: 20px;
+}
+.sovTable thead tr th:first-child {
+  text-align: start;
+  flex: 1;
+}
+
+.sovTable tbody {
+  width: 100%;
+  background-color: var(--lime);
+  color: var(--green);
+  display: flex;
+  flex-direction: column;
+}
+
+tr:nth-of-type(even) {
+  background-color: #829e24;
+}
+
+.sovTable tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0.3rem;
+  height: calc(2rem + 20px);
+  font-size: 18px;
+  font-weight: 600;
+  gap: 1.5rem;
+}
+
+.sovTable tbody td:first-child {
+  flex: 1;
+}
+
+tr.jobTotal {
+  font-size: 24px;
+  height: 50px;
+  background-color: var(--black);
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-top: 10px solid var(--green);
+}
+tr.jobTotal td:last-child {
+  color: var(--white);
+}

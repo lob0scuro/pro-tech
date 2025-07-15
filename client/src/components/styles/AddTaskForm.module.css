@@ -1,0 +1,43 @@
+.addTaskForm {
+  width: 90%;
+  display: grid;
+  /* grid-template-rows: 60% 20% 20%; */
+  grid-template-areas:
+    "a a"
+    "b c"
+    "d d";
+  gap: 0.5rem;
+}
+
+.addTaskForm div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.addTaskForm div label {
+  font-size: 1.2rem;
+}
+
+div.desc {
+  grid-area: a;
+}
+div.quan {
+  grid-area: b;
+}
+div.cost {
+  grid-area: c;
+}
+.addTaskForm button {
+  grid-area: d;
+  padding: 5px;
+}
+
+.addTaskForm div input {
+  background-color: var(--white);
+  color: var(--black);
+  width: 100%;
+  height: 36px;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 24px;
+}

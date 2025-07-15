@@ -1,0 +1,37 @@
+.newProjectHeader {
+  font-size: 2.4rem;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-left: 1rem;
+  color: var(--lime);
+}
+
+.createProjectForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 90%;
+  height: 100%;
+}
+
+.createProjectForm div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 24px;
+}
+
+.createProjectForm div input {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 8px;
+  height: 42px;
+  font-size: 24px;
+  padding: 6px;
+}
+
+.createProjectForm button {
+  margin-top: 3rem;
+}
