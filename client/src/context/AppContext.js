@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
     id: 1,
     first_name: "Cameron",
     last_name: "Lopez",
-    full_name: `${this.first_name} ${this.last_name}`,
+    full_name: "Cameron Lopez",
     email: "cameronlopez@email.com",
     company: "Cameron Lopez A/C",
   });
