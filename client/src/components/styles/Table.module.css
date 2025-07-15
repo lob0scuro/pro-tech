@@ -41,7 +41,7 @@
   flex-direction: column;
 }
 
-tr:nth-of-type(even) {
+.sovTable tr:nth-of-type(even) {
   background-color: #829e24;
 }
 
