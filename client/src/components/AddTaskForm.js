@@ -1,11 +1,11 @@
-import { useAppContext } from "@/context/AppContext";
 import styles from "./styles/AddTaskForm.module.css";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Button from "./Button";
+import { useDB } from "@/context/DBContext";
 
 const AddTaskForm = ({ project_id }) => {
-  const { user, setProjectTasks } = useAppContext();
+  const { autoDB, setTasks, setAutoTasks } = useDB();
   const [formData, setFormData] = useState({
     description: "",
     quantity: 0,
@@ -34,7 +34,10 @@ const AddTaskForm = ({ project_id }) => {
       total_amount: Number(formData.quantity * Number(formData.unit_cost)),
     };
 
-    setProjectTasks((prev) => [...prev, inputs]);
+    autoDB
+      ? setAutoTasks((prev) => [...prev, inputs])
+      : setTasks((prev) => [...prev, inputs]);
+
     toast.success("Task added!");
 
     setFormData({

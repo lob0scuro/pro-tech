@@ -9,8 +9,6 @@
 .sovTable {
   width: 90%;
   margin-bottom: auto;
-  max-height: 400px;
-  overflow-y: auto;
 }
 
 .sovTable thead {
@@ -39,6 +37,8 @@
   color: var(--green);
   display: flex;
   flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .sovTable tr:nth-of-type(even) {
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: 0.3rem;
-  height: calc(2rem + 20px);
+  min-height: calc(3rem + 20px);
   font-size: 18px;
   font-weight: 600;
   gap: 1.5rem;

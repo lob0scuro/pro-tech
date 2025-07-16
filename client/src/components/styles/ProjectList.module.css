@@ -1,0 +1,48 @@
+.switchBlock {
+  display: flex;
+  gap: 1rem;
+}
+
+.switchLabel {
+  width: 80px;
+  height: 30px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  border: 3px solid var(--white);
+  padding: 1px;
+  transition: 3s smooth;
+  background-color: #323030;
+  box-shadow: inset -2px -2px 8px #000, inset 2px 2px 8px #000;
+}
+
+.activeSwitch {
+  justify-content: flex-start;
+}
+.inactiveSwitch {
+  justify-content: flex-end;
+}
+
+.switch {
+  display: none;
+}
+
+.ball {
+  height: 23px;
+  width: 34px;
+  border: 0.5px solid var(--lime);
+  border-radius: 32px;
+  background-color: var(--green);
+  box-shadow: inset 2px 2px 8px #333, inset -2px -2px 8px #333;
+}
+
+.projectBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.projectBlock button {
+  width: 80%;
+}

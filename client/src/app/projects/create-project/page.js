@@ -7,27 +7,30 @@ import { useAppContext } from "@/context/AppContext";
 import { ProjectTable } from "@/lib/db";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useDB } from "@/context/DBContext";
 
 const CreateProject = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const { user, setAppProjects } = useAppContext();
+  const { user } = useAppContext();
+  const { setProjects, setAutoProjects, autoDB } = useDB();
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
+      id: Math.floor(Math.random() * 1000) + 1,
       name: name,
       address: address,
       user_id: user.id,
-      id: Math.floor(Math.random() * (100 - 11 + 1)) + 11,
       total_project_value: 0,
       total_billed_to_date_customer: 0,
       total_billed_to_date_subs: 0,
       is_active: true,
     };
-
-    setAppProjects((prev) => [...prev, formData]);
+    autoDB
+      ? setAutoProjects((prev) => [...prev, formData])
+      : setProjects((prev) => [...prev, formData]);
     toast.success("New project added!");
     router.push("/");
   };

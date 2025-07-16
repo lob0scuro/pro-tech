@@ -3,6 +3,7 @@
   border-radius: 8px;
   padding: 1rem 0.5rem;
   font-size: 18px;
+  box-shadow: -2px 2px 4px #304b1f;
 }
 .btn:hover {
   background-color: var(--green);
@@ -16,6 +17,7 @@
   padding: 1rem 0;
   border-radius: 8px;
   font-size: 18px;
+  box-shadow: -2px 2px 2px #304b1f;
 }
 .secondaryBtn:hover {
   background-color: var(--green);
