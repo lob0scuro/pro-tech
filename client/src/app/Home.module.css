@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   box-shadow: inset -4px -4px 6px #333, inset 4px 4px 6px #333;
+  background-color: #000;
 }
 
 .switchLabel {
@@ -24,9 +25,9 @@
 }
 
 .testMode {
-  background-color: blue;
-  border-color: blue;
-  color: lightblue;
+  background-color: var(--green);
+  border-color: var(--lime);
+  color: var(--lime);
 }
 
 .modeSwitch label input[type="checkbox"] {

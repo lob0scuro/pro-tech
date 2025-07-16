@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
 :root {
+  --green: rgb(35, 35, 157);
+  --lime: rgb(128, 223, 255);
+  --black: rgb(9, 9, 82);
+  --white: #fefefe;
+  --second: #35929a;
+}
+
+.test-mode {
   --green: #025901;
   --lime: #9dbd37;
   --black: #1c1618;
   --white: #fefefe;
+  --second: #7da00c;
 }
 
 * {

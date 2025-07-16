@@ -42,7 +42,7 @@
 }
 
 .sovTable tr:nth-of-type(even) {
-  background-color: #829e24;
+  background-color: var(--second);
 }
 
 .sovTable tr {

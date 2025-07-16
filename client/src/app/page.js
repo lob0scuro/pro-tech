@@ -6,11 +6,18 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import clsx from "clsx";
 import { useDB } from "@/context/DBContext";
+import { useAppContext } from "@/context/AppContext";
 import ProjectList from "@/components/ProjectList";
 
 const Home = () => {
   const router = useRouter();
   const { autoDB, setAutoDB } = useDB();
+  const { testMode, toggleMode } = useAppContext();
+
+  const toggleIt = () => {
+    setAutoDB(!autoDB);
+    toggleMode();
+  };
   return (
     <>
       <div className={styles.modeSwitch}>
@@ -21,7 +28,7 @@ const Home = () => {
           )}
         >
           <span>{autoDB ? "Test Mode" : "Live Mode"}</span>
-          <input type="checkbox" onChange={() => setAutoDB(!autoDB)} />
+          <input type="checkbox" onChange={toggleIt} />
         </label>
       </div>
       <Button

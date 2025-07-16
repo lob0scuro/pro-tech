@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ProjectTable, TaskTable } from "@/lib/db";
 
 const AppContext = createContext();
@@ -14,18 +14,26 @@ export const AppProvider = ({ children }) => {
     email: "cameronlopez@email.com",
     company: "Cameron Lopez A/C",
   });
-  const [appProjects, setAppProjects] = useState(ProjectTable);
-  const [projectTasks, setProjectTasks] = useState(TaskTable);
+  const [testMode, setTestMode] = useState(true);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (testMode) {
+      root.classList.add("test-mode");
+    } else {
+      root.classList.remove("test-mode");
+    }
+  }, [testMode]);
+
+  const toggleMode = () => setTestMode((prev) => !prev);
 
   return (
     <AppContext.Provider
       value={{
         user,
         setUser,
-        appProjects,
-        setAppProjects,
-        projectTasks,
-        setProjectTasks,
+        testMode,
+        toggleMode,
       }}
     >
       {children}
