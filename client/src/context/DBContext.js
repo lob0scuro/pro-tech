@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import { ProjectTable, TaskTable } from "@/lib/db";
+import { ProjectTable, SubcontractorTable, TaskTable } from "@/lib/db";
 
 const DBContext = createContext();
 
@@ -18,6 +18,8 @@ export const DBProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]);
   const [autoProjects, setAutoProjects] = useState(ProjectTable);
   const [autoTasks, setAutoTasks] = useState(TaskTable);
+  const [autoSubcontractors, setAutoSubcontractors] =
+    useState(SubcontractorTable);
 
   return (
     <DBContext.Provider
@@ -46,6 +48,8 @@ export const DBProvider = ({ children }) => {
         setAutoProjects,
         autoTasks,
         setAutoTasks,
+        autoSubcontractors,
+        setAutoSubcontractors,
       }}
     >
       {children}

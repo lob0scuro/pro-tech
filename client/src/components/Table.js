@@ -18,15 +18,17 @@ const Table = ({ data }) => {
       <thead>
         <tr>
           <th>Item</th>
-          <th>Quantity</th>
+          <th>Cost</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        {data.map(({ id, description, quantity, total_amount }) => (
+        {data.map(({ id, description, quantity, unit_cost, total_amount }) => (
           <tr key={id}>
-            <td>{description}</td>
-            <td>{quantity}</td>
+            <td>
+              <small>x{quantity}</small> {description}
+            </td>
+            <td>${unit_cost}</td>
             <td>${total_amount}</td>
           </tr>
         ))}

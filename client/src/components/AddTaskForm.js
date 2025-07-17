@@ -30,13 +30,15 @@ const AddTaskForm = ({ project_id }) => {
       assigned_sub_id: null,
       assigned_percent: null,
       status: "unassigned",
-      project_id: project_id,
+      project_id: Number(project_id),
       total_amount: Number(formData.quantity * Number(formData.unit_cost)),
     };
 
     autoDB
       ? setAutoTasks((prev) => [...prev, inputs])
       : setTasks((prev) => [...prev, inputs]);
+
+    autoDB ? console.log("Test Mode") : console.log("Live Mode");
 
     toast.success("Task added!");
 

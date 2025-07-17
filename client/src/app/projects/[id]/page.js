@@ -8,9 +8,12 @@ import Button from "@/components/Button";
 import { useAppContext } from "@/context/AppContext";
 import AddTaskForm from "@/components/AddTaskForm";
 import { useDB } from "@/context/DBContext";
+import { useRouter, notFound } from "next/navigation";
 
 const Project = () => {
   const { id } = useParams();
+  const router = useRouter();
+
   const { autoDB, projects, autoProjects, tasks, autoTasks } = useDB();
   const project = autoDB
     ? autoProjects.find((p) => p.id === Number(id))
@@ -19,6 +22,10 @@ const Project = () => {
   const taskList = autoDB
     ? autoTasks.filter((t) => t.project_id === Number(id))
     : tasks.filter((t) => t.project_id === Number(id));
+
+  if (!project) {
+    notFound();
+  }
 
   return (
     <>
